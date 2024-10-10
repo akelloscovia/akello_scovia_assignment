@@ -1,0 +1,105 @@
+# The volume of a sphere with radius r is (4/3)* pie * r**2. 
+# What is the volume of the sphere with radius 5. 
+# Make sure the program enters the radius from the keyboard and provide the answer in 2 decimal places
+
+# Create a program to calculate the area of a triangle (1/2 * base * height). 
+# Base and height should be entered using the keyboard. 
+
+#Question One
+# WITI has tasked you to automate a simple grading system. 
+# As a python student, write a program using  to display the grades that 
+# the students will be receiving based on the mark scored in a subject. 
+# The grades are:
+# 90% - 100%  Grade is A
+# 80% - 89%   Grade is  B
+# 70% - 79%   Grade is C                                                        
+# 60% - 69%   Grade is D                  
+# 50% - 59%   Grade is E  
+# < 50% Fail 
+
+#  WITI Academy is proposing a Sacco to help students save their money. 
+#  Design a platform that will do the following.
+#  Welcome to, WITIAcademy Sacco.
+#  1. Deposit Money
+#  2. Withdraw Money
+#  3. Check Balance
+#  Ensure if the student selects 1, money is deposited and the minimum deposit should be 1000.
+#  If the student selects 2, money should be withdrawn and a minimum withdrawal is 500.
+#  If the student selects 3, the account balance should be displayed.
+
+#answer to 1
+r = int(input("Enter the radius"))
+pie = 22/7
+volume =(4/3)*pie*r**2
+print(f"The volume of the sphere")
+
+ 
+ #no 2
+ 
+base = int(input("Enter the base of the triangle:"))
+height = int(input("Enter the height of the triangle:"))
+area = 0.5 *base *height
+print(f"The area of the triangle is {area:.2f}") 
+ 
+ #no 3
+#Witi academy sacco:
+def calculatedgrades():
+  print("...student marks scored ...\n")
+  
+  score = int(input("Enter the marks scored:\n"))
+  
+  if score >= 90 and score <= 100:
+    print("Grade is A")
+
+  elif score>=80 and score <=89:
+    print("Grade iS B")
+    
+  elif score>=70 and score <=79:
+    print("Grade is C" ) 
+    
+  elif score >= 60 and score <=69:
+    print("Grade is D")
+    
+  elif score>= 50 and score <=59:
+    print("Grade is E")
+    
+  else:
+    print("Fail")
+  
+
+#no 4
+def sacco_trasactions():
+    account_balance = 0
+    run = 1
+    while run == 1: 
+      print("\nWelcome to, WITIAcademy Sacco.") 
+    #menu
+    print("1. Deposit Money") 
+    print("2. Withdraw Money")
+    print("3. Check balance")
+    student_choice = int(input("Enter your selection(1, 2 or 3):"))
+    
+    if student_choice == 1:
+      print("\n...Processing a deposit amount transaction...")
+      deposit_amount = int(input("Enter the amount to be deposited:  "))
+      
+      #check if  deposited amount is less than 1000
+      if deposit_amount <1000:
+        print('\nMinimum deposit is 1000')
+      else:
+        account_balance += deposit_amount
+        print(f"Dear student you have deposited {deposit_amount:,} and your new account balance is {account_balance}")
+        
+        if student_choice == 2:
+          print('\n...processing  a withdraw...')
+          withdraw_amount = int(input("Enter the amount to be withdrawn:"))
+          
+          if account_balance == 0:
+            print("Your account_balance is 0")
+          elif withdraw_amount < 500:
+            print("\nMinimum amount to be withdrawn is 500")
+          elif withdraw_amount > account_balance:
+            print ("withdraw failed due to insufficient funds")
+          else:account_balance =withdraw_amount
+          print(f"Dear student,you have withdrawn{withdraw_amount:,} and your new account_balance is {account_balance}")
+        
